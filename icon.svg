@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="맞닿음 모임">
+  <rect width="512" height="512" rx="120" fill="#1d4ed8"/>
+  <rect x="58" y="58" width="396" height="396" rx="92" fill="#f7faff"/>
+  <path d="M154 196c0-23.196 18.804-42 42-42h120c23.196 0 42 18.804 42 42v120c0 23.196-18.804 42-42 42H196c-23.196 0-42-18.804-42-42V196Z" fill="#1d4ed8"/>
+  <circle cx="344" cy="168" r="42" fill="#7aa2ff"/>
+  <path d="M208 320h96" stroke="#f7faff" stroke-width="26" stroke-linecap="round"/>
+  <path d="M208 256h96" stroke="#f7faff" stroke-width="26" stroke-linecap="round"/>
+</svg>

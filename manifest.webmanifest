@@ -1,0 +1,19 @@
+{
+  "name": "맞닿음 모임",
+  "short_name": "맞닿음 모임",
+  "description": "니시진역 근처 숙소를 기준으로 정리한 후쿠오카 여행 가이드",
+  "lang": "ko",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7faff",
+  "theme_color": "#1d4ed8",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

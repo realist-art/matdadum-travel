@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>맞닿음 모임</title>
+  <meta name="theme-color" content="#1d4ed8">
+  <meta name="description" content="니시진역 근처 숙소를 기준으로 정리한 후쿠오카 맞닿음 여행 가이드">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="맞닿음 모임">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero" id="top">
+      <div class="hero__grid">
+        <div>
+          <p class="eyebrow">FUKUOKA CONTENT GUIDE</p>
+          <h1>맞닿음 모임</h1>
+          <p class="hero__desc">
+            숙소는 `니시진역 근처 사와라구 주택가` 기준으로 잡고,
+            주변 명소, 버스 일일투어, 시내 콘텐츠, 맛집과 기념품을 흰 배경의 정보형 화면으로 한 번에 보기 쉽게 정리했습니다.
+          </p>
+          <div class="hero__actions">
+            <a class="hero-button hero-button--primary" href="#stay-spots">여행 보기</a>
+            <button class="hero-button hero-button--ghost" type="button" id="share-button">공유하기</button>
+          </div>
+        </div>
+        <aside class="hero__card">
+          <p class="panel__label">숙소 베이스</p>
+          <h2>最大10名｜広々96㎡一軒家</h2>
+          <ul class="plain-list">
+            <li>기준 위치: 니시진역 근처</li>
+            <li>강점: 모모치, 니시진, 오호리권 접근 좋음</li>
+            <li>추천 무드: 로컬 + 해변 + 시내 밸런스형</li>
+          </ul>
+          <div class="install-note" id="install-note">
+            홈 화면에 추가하면 휴대폰 앱처럼 열 수 있게 PWA로 구성했습니다.
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section class="category-bar" aria-label="카테고리 바로가기">
+      <a href="#stay-spots">숙소 주변 명소</a>
+      <a href="#day-tours">버스 일일투어</a>
+      <a href="#city-content">시내에서 좋은 콘텐츠</a>
+      <a href="#food-gifts">맛집 & 기념품</a>
+    </section>
+
+    <main>
+      <section class="section" id="stay-spots">
+        <div class="section-heading">
+          <p class="eyebrow">CATEGORY 01</p>
+          <h2>숙소 주변 명소</h2>
+          <p class="section-lead">
+            숙소 정확 주소 대신 `니시진역`을 출발 기준으로 잡았습니다.
+            휴대폰에서 `Google 지도` 버튼을 누르면 바로 길찾기로 연결되고, 카드에는 체감 거리와 어떤 식으로 묶으면 좋은지까지 같이 적어뒀습니다.
+          </p>
+        </div>
+        <div class="cards-grid cards-grid--primary" id="stay-grid"></div>
+      </section>
+
+      <section class="section" id="day-tours">
+        <div class="section-heading">
+          <p class="eyebrow">CATEGORY 02</p>
+          <h2>버스 일일투어</h2>
+          <p class="section-lead">
+            요청하신 WAUG 상품 2개를 기준으로 `사파리 버전`과 `유후인·벳부·다자이후 묶음 버전`을 비교했습니다.
+            둘 다 하카타역 치쿠시구치 오리엔탈호텔 로손 앞 집결입니다.
+          </p>
+        </div>
+        <div class="tour-compare" id="tour-compare"></div>
+      </section>
+
+      <section class="section" id="city-content">
+        <div class="section-heading">
+          <p class="eyebrow">CATEGORY 03</p>
+          <h2>시내에서 좋은 콘텐츠</h2>
+          <p class="section-lead">
+            유후인을 포기해도 아쉽지 않게 채울 수 있는 카드들입니다.
+            실내, 야경, 쇼핑, 산책이 섞여 있어서 날씨나 팀 체력에 따라 바꾸기 쉽습니다.
+          </p>
+        </div>
+        <div class="cards-grid" id="city-grid"></div>
+      </section>
+
+      <section class="section" id="food-gifts">
+        <div class="section-heading">
+          <p class="eyebrow">CATEGORY 04</p>
+          <h2>맛집 & 기념품</h2>
+          <p class="section-lead">
+            첫 방문 기준으로 실패 확률 낮은 먹거리와 선물용 기념품만 추렸습니다.
+            `왜 추천하는지`, `언제 넣으면 좋은지`, `대략 가격대`까지 같이 정리했습니다.
+          </p>
+        </div>
+        <div class="cards-grid" id="food-grid"></div>
+      </section>
+
+      <section class="section" id="sample-day">
+        <div class="section-heading">
+          <p class="eyebrow">SAMPLE FLOW</p>
+          <h2>추천 하루 배치 예시</h2>
+          <p class="section-lead">
+            카테고리형으로 보되, 실제로는 이렇게 조합하면 동선이 편합니다.
+          </p>
+        </div>
+        <div class="sample-board" id="sample-board"></div>
+      </section>
+
+      <section class="section source-section" id="sources">
+        <div class="section-heading">
+          <p class="eyebrow">SOURCES</p>
+          <h2>참고 링크</h2>
+        </div>
+        <div class="source-list" id="source-links"></div>
+      </section>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
