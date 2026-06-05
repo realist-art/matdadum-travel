@@ -179,6 +179,7 @@ img {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   box-shadow: 0 10px 28px rgba(29, 78, 216, 0.08);
+  overflow-x: auto;
 }
 
 .category-bar a {
@@ -240,17 +241,64 @@ img {
   gap: 14px;
 }
 
+.card details {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.card details[open] {
+  padding-bottom: 2px;
+}
+
+.card summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--blue-deep);
+  font-weight: 700;
+}
+
+.card summary::-webkit-details-marker {
+  display: none;
+}
+
+.card summary::after {
+  content: "열기";
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.card details[open] summary::after {
+  content: "닫기";
+}
+
 .card__image {
   aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 18px;
   background: var(--surface-alt);
+  position: relative;
 }
 
 .card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.card__image--fallback {
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, #edf4ff, #f8fbff);
+  color: var(--blue-deep);
+  font-weight: 800;
+  font-size: 1rem;
+  text-align: center;
+  padding: 18px;
 }
 
 .card__head,
@@ -318,6 +366,10 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 10px;
+}
+
+.card__summary {
+  color: var(--muted);
 }
 
 .tour-compare {
@@ -404,7 +456,14 @@ img {
 
 @media (max-width: 720px) {
   .category-bar {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+  .category-bar a {
+    flex: 0 0 auto;
   }
 
   .hero {
@@ -418,11 +477,37 @@ img {
   }
 
   .category-bar {
+    top: 0;
     padding: 10px;
     border-radius: 18px;
   }
 
   .category-bar a {
     font-size: 0.88rem;
+    min-width: 148px;
+  }
+
+  .card,
+  .tour-card,
+  .sample-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .card__image,
+  .tour-card .card__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .card p,
+  .tour-card p,
+  .sample-card p,
+  .meta-row {
+    font-size: 0.95rem;
+    line-height: 1.62;
+  }
+
+  .meta-list {
+    gap: 6px;
   }
 }

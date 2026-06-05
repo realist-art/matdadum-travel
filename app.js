@@ -155,7 +155,7 @@ const foodGifts = [
   {
     name: "모츠나베",
     area: "저녁 메인 식사",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Motsunabe_by_katorisi_in_Fukuoka.jpg/1280px-Motsunabe_by_katorisi_in_Fukuoka.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Motsunabe_by_katorisi_in_Fukuoka.jpg",
     summary: "남자 넷이서 가장 만족도 높게 먹기 쉬운 메뉴입니다. 술자리와도 잘 맞고, 후쿠오카 왔다는 느낌이 확 나는 대표 음식이라 한 번은 꼭 넣는 걸 추천합니다.",
     distance: "니시진/텐진/하카타 선택 폭 넓음",
     transit: "저녁 중심지에 따라 선택",
@@ -166,7 +166,7 @@ const foodGifts = [
   {
     name: "하카타 라멘",
     area: "가벼운 한 끼",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Tonkotsu_Ramen_by_Takashi_Hososhima_in_Nagahama_001.jpg/1280px-Tonkotsu_Ramen_by_Takashi_Hososhima_in_Nagahama_001.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Tonkotsu_Ramen_by_Takashi_Hososhima_in_Nagahama_001.jpg",
     summary: "첫날 점심이나 마지막 날 마무리 식사로 가장 안정적입니다. 회전이 빨라 일정에 부담이 적고, 가격도 비교적 무난합니다.",
     distance: "숙소권/하카타/텐진 어디든 가능",
     transit: "짧은 끼니용",
@@ -177,7 +177,7 @@ const foodGifts = [
   {
     name: "멘타이코 과자 & 하카타 토리몽",
     area: "기념품",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Mentaiko.jpg/1280px-Mentaiko.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mentaiko.jpg",
     summary: "회사나 지인에게 나눠주기 무난한 선물군입니다. 부담 없는 가격대라 여러 개 사기 좋고, 하카타역이나 공항에서 마지막에 몰아사기 편합니다.",
     distance: "하카타역 / 공항 구매 편함",
     transit: "마지막 날 구매 추천",
@@ -188,7 +188,7 @@ const foodGifts = [
   {
     name: "드럭스토어 쇼핑",
     area: "실속 기념품",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Drugstore_in_Japan.jpg/1280px-Drugstore_in_Japan.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Drugstore_in_Japan.jpg",
     summary: "간식, 파스, 생활용품, 화장품까지 실속형 선물은 여기서 정리하는 게 좋습니다. 니시진이나 텐진 근처에서도 쉽게 찾을 수 있습니다.",
     distance: "숙소 근처도 탐색 가능",
     transit: "로컬권에서도 확보 가능",
@@ -240,7 +240,7 @@ function cardTemplate(item) {
   return `
     <article class="card">
       <div class="card__image">
-        <img src="${item.image}" alt="${item.name}">
+        <img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.parentElement.innerHTML='&lt;div class=&quot;card__image card__image--fallback&quot;&gt;${item.name}&lt;/div&gt;';">
       </div>
       <div class="card__head">
         <div>
@@ -249,12 +249,15 @@ function cardTemplate(item) {
         </div>
         <span class="badge">${item.price}</span>
       </div>
-      <p>${item.summary}</p>
-      <div class="meta-list">
-        <div class="meta-row"><strong>거리감</strong><span>${item.distance}</span></div>
-        <div class="meta-row"><strong>이동</strong><span>${item.transit}</span></div>
-        <div class="meta-row"><strong>추천 조합</strong><span>${item.combo}</span></div>
-      </div>
+      <p class="card__summary">${item.summary}</p>
+      <details>
+        <summary>자세히 보기</summary>
+        <div class="meta-list">
+          <div class="meta-row"><strong>거리감</strong><span>${item.distance}</span></div>
+          <div class="meta-row"><strong>이동</strong><span>${item.transit}</span></div>
+          <div class="meta-row"><strong>추천 조합</strong><span>${item.combo}</span></div>
+        </div>
+      </details>
       <div class="card__footer">
         <a class="map-link" href="${item.map}" target="_blank" rel="noreferrer">Google 지도</a>
       </div>
@@ -266,7 +269,7 @@ function tourTemplate(item) {
   return `
     <article class="tour-card ${item.feature ? "tour-card--feature" : ""}">
       <div class="card__image">
-        <img src="${item.image}" alt="${item.name}">
+        <img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.parentElement.innerHTML='&lt;div class=&quot;card__image card__image--fallback&quot;&gt;${item.name}&lt;/div&gt;';">
       </div>
       <div class="tour-card__head">
         <div>
