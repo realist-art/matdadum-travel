@@ -155,7 +155,7 @@ const foodGifts = [
   {
     name: "모츠나베",
     area: "저녁 메인 식사",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Motsunabe_by_katorisi_in_Fukuoka.jpg",
+    image: "./assets/photos/motsunabe.jpg",
     summary: "남자 넷이서 가장 만족도 높게 먹기 쉬운 메뉴입니다. 술자리와도 잘 맞고, 후쿠오카 왔다는 느낌이 확 나는 대표 음식이라 한 번은 꼭 넣는 걸 추천합니다.",
     distance: "니시진/텐진/하카타 선택 폭 넓음",
     transit: "저녁 중심지에 따라 선택",
@@ -166,7 +166,7 @@ const foodGifts = [
   {
     name: "하카타 라멘",
     area: "가벼운 한 끼",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Tonkotsu_Ramen_by_Takashi_Hososhima_in_Nagahama_001.jpg",
+    image: "./assets/photos/hakata-ramen.jpg",
     summary: "첫날 점심이나 마지막 날 마무리 식사로 가장 안정적입니다. 회전이 빨라 일정에 부담이 적고, 가격도 비교적 무난합니다.",
     distance: "숙소권/하카타/텐진 어디든 가능",
     transit: "짧은 끼니용",
@@ -177,7 +177,7 @@ const foodGifts = [
   {
     name: "멘타이코 과자 & 하카타 토리몽",
     area: "기념품",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mentaiko.jpg",
+    image: "./assets/photos/mentaiko.jpg",
     summary: "회사나 지인에게 나눠주기 무난한 선물군입니다. 부담 없는 가격대라 여러 개 사기 좋고, 하카타역이나 공항에서 마지막에 몰아사기 편합니다.",
     distance: "하카타역 / 공항 구매 편함",
     transit: "마지막 날 구매 추천",
@@ -188,13 +188,133 @@ const foodGifts = [
   {
     name: "드럭스토어 쇼핑",
     area: "실속 기념품",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Drugstore_in_Japan.jpg",
+    image: "./assets/photos/drugstore.jpg",
     summary: "간식, 파스, 생활용품, 화장품까지 실속형 선물은 여기서 정리하는 게 좋습니다. 니시진이나 텐진 근처에서도 쉽게 찾을 수 있습니다.",
     distance: "숙소 근처도 탐색 가능",
     transit: "로컬권에서도 확보 가능",
     combo: "첫날 위치 파악 겸 사전 답사",
     price: "구매 품목별 상이",
     map: "https://www.google.com/maps/search/?api=1&query=Drugstore+Fujisaki+Fukuoka",
+  },
+];
+
+const practicalTips = [
+  {
+    name: "교통 패턴",
+    area: "이동 팁",
+    image: "./icon.svg",
+    summary: "니시진역 베이스라면 공항-하카타-텐진-니시진 축이 핵심입니다. 모모치권은 버스가 더 편한 경우가 많고, 밤 늦게는 택시 4인 분담이 오히려 효율적일 수 있습니다.",
+    distance: "지하철 + 버스 혼합 추천",
+    transit: "하루 이동 많은 날은 1일권 검토",
+    combo: "니시진역 이동 + 모모치 버스 + 야간 택시",
+    price: "패스/단건 비교 필요",
+    map: "https://www.google.com/maps/search/?api=1&query=Nishijin+Station+Fukuoka",
+  },
+  {
+    name: "결제와 현금",
+    area: "실전 팁",
+    image: "./icon.svg",
+    summary: "대부분 카드와 간편결제가 되지만, 야타이·소규모 상점·일부 버스 결제 때문에 소액 현금을 조금 갖고 있는 편이 안전합니다.",
+    distance: "지갑 분산 추천",
+    transit: "카드 + 현금 병행",
+    combo: "편의점 ATM 활용",
+    price: "소액 현금 1인 5천엔 안팎 권장",
+    map: "https://www.google.com/maps/search/?api=1&query=ATM+Nishijin+Fukuoka",
+  },
+  {
+    name: "예약 우선순위",
+    area: "예약 팁",
+    image: "./icon.svg",
+    summary: "유후인 투어, 인기 모츠나베집, 팀랩 시간대, 유후인노모리 같은 건 미리 잡는 편이 좋습니다. 반대로 라멘·드럭스토어·기념품은 현장 대응으로 충분합니다.",
+    distance: "사전 예약 효율 높음",
+    transit: "출발 전 정리 추천",
+    combo: "투어 + 저녁식당 우선 예약",
+    price: "예약비는 상품별 상이",
+    map: "https://www.google.com/maps/search/?api=1&query=Hakata+Station",
+  },
+  {
+    name: "쇼핑 타이밍",
+    area: "기념품 전략",
+    image: "./icon.svg",
+    summary: "먹는 기념품은 마지막 날 하카타역이나 공항에서 몰아사는 게 편하고, 드럭스토어 품목은 첫날 가격만 파악해뒀다가 마지막에 정리하는 방식이 실패가 적습니다.",
+    distance: "첫날 탐색, 마지막 날 구매",
+    transit: "하카타역 집중 구매 추천",
+    combo: "숙소권 탐색 + 마지막 정산 쇼핑",
+    price: "짐 무게 체크 필요",
+    map: "https://www.google.com/maps/search/?api=1&query=Hakata+Station+Souvenir",
+  },
+  {
+    name: "밤 귀가 팁",
+    area: "야간 이동",
+    image: "./icon.svg",
+    summary: "텐진이나 나카스에서 늦게까지 있으면 마지막 지하철 시간을 미리 보고 움직이는 편이 좋습니다. 넷이면 택시 분담이 생각보다 괜찮고, 숙소가 주택가라 너무 늦은 밤에는 조용히 들어가는 게 편합니다.",
+    distance: "야간엔 시간표 우선 확인",
+    transit: "막차 전엔 지하철, 이후엔 택시 분담",
+    combo: "나카스 2차 후 귀가 체크",
+    price: "택시 분담 시 부담 완화",
+    map: "https://www.google.com/maps/search/?api=1&query=Nishijin+Station+Fukuoka",
+  },
+  {
+    name: "편의점 · ATM · 장보기",
+    area: "숙소 생활",
+    image: "./icon.svg",
+    summary: "체크인 직후에는 물, 맥주, 야식, 아침거리, 세면용품부터 먼저 정리해두면 동선이 훨씬 편합니다. 현금이 모자라면 편의점 ATM이 가장 무난합니다.",
+    distance: "숙소권 첫 동선에서 확인 추천",
+    transit: "도보 생활권 체크",
+    combo: "체크인 후 바로 장보기",
+    price: "필요한 만큼만 소분 구매",
+    map: "https://www.google.com/maps/search/?api=1&query=Convenience+store+Nishijin+Fukuoka",
+  },
+];
+
+const naverReviews = [
+  {
+    name: "니시진역 여행 후기",
+    area: "네이버 블로그 검색",
+    image: "./icon.svg",
+    summary: "니시진역 주변 분위기, 숙소 동선, 실제 체감 이동 후기를 한 번에 보기 좋은 검색입니다.",
+    distance: "키워드: 후쿠오카 니시진역 여행",
+    transit: "숙소권 전반 리뷰",
+    combo: "동네 분위기 먼저 확인할 때",
+    price: "검색 링크",
+    map: "https://search.naver.com/search.naver?where=blog&query=%ED%9B%84%EC%BF%A0%EC%98%A4%EC%B9%B4+%EB%8B%88%EC%8B%9C%EC%A7%84%EC%97%AD+%EC%97%AC%ED%96%89",
+    cta: "블로그 보기",
+  },
+  {
+    name: "니시진역 숙소 후기",
+    area: "네이버 블로그 검색",
+    image: "./icon.svg",
+    summary: "니시진역 근처 숙소의 조용함, 이동 편의, 체크인 경험 같은 실사용 후기를 찾기 좋습니다.",
+    distance: "키워드: 후쿠오카 니시진역 숙소",
+    transit: "숙소 리뷰 중심",
+    combo: "우리 숙소권 감 잡기",
+    price: "검색 링크",
+    map: "https://search.naver.com/search.naver?where=blog&query=%ED%9B%84%EC%BF%A0%EC%98%A4%EC%B9%B4+%EB%8B%88%EC%8B%9C%EC%A7%84%EC%97%AD+%EC%88%99%EC%86%8C",
+    cta: "블로그 보기",
+  },
+  {
+    name: "니시진 맛집 후기",
+    area: "네이버 블로그 검색",
+    image: "./icon.svg",
+    summary: "니시진 쪽 로컬 식당, 카페, 가볍게 들를 만한 곳 위주로 후기들을 모아보기 좋습니다.",
+    distance: "키워드: 후쿠오카 니시진 맛집",
+    transit: "동네 먹거리 탐색",
+    combo: "첫날/마지막날 식당 찾기",
+    price: "검색 링크",
+    map: "https://search.naver.com/search.naver?where=blog&query=%ED%9B%84%EC%BF%A0%EC%98%A4%EC%B9%B4+%EB%8B%88%EC%8B%9C%EC%A7%84+%EB%A7%9B%EC%A7%91",
+    cta: "블로그 보기",
+  },
+  {
+    name: "모모치 해변 · 니시진 동선 후기",
+    area: "네이버 블로그 검색",
+    image: "./icon.svg",
+    summary: "니시진에서 모모치, 후쿠오카타워, 해변권을 어떻게 묶는지 본 사람들 후기 중심으로 보기 좋습니다.",
+    distance: "키워드: 후쿠오카 모모치 니시진",
+    transit: "바다권 동선 참고",
+    combo: "둘째 날 계획 세울 때",
+    price: "검색 링크",
+    map: "https://search.naver.com/search.naver?where=blog&query=%ED%9B%84%EC%BF%A0%EC%98%A4%EC%B9%B4+%EB%AA%A8%EB%AA%A8%EC%B9%98+%EB%8B%88%EC%8B%9C%EC%A7%84",
+    cta: "블로그 보기",
   },
 ];
 
@@ -259,7 +379,7 @@ function cardTemplate(item) {
         </div>
       </details>
       <div class="card__footer">
-        <a class="map-link" href="${item.map}" target="_blank" rel="noreferrer">Google 지도</a>
+        <a class="map-link" href="${item.map}" target="_blank" rel="noreferrer">${item.cta || "Google 지도"}</a>
       </div>
     </article>
   `;
@@ -313,6 +433,8 @@ document.getElementById("stay-grid").innerHTML = staySpots.map(cardTemplate).joi
 document.getElementById("tour-compare").innerHTML = dayTours.map(tourTemplate).join("");
 document.getElementById("city-grid").innerHTML = cityContents.map(cardTemplate).join("");
 document.getElementById("food-grid").innerHTML = foodGifts.map(cardTemplate).join("");
+document.getElementById("tips-grid").innerHTML = practicalTips.map(cardTemplate).join("");
+document.getElementById("review-grid").innerHTML = naverReviews.map(cardTemplate).join("");
 document.getElementById("sample-board").innerHTML = sampleFlow.map(sampleTemplate).join("");
 document.getElementById("source-links").innerHTML = sources
   .map((source) => `<a href="${source.url}" target="_blank" rel="noreferrer">${source.label}</a>`)

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="멘타이코 기념품">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef3ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect x="170" y="210" width="860" height="280" rx="34" fill="#ffffff" stroke="#dbe7fb" stroke-width="8"/>
+  <rect x="215" y="255" width="250" height="190" rx="22" fill="#f4f7ff"/>
+  <rect x="492" y="255" width="250" height="190" rx="22" fill="#fff2ef"/>
+  <rect x="769" y="255" width="216" height="190" rx="22" fill="#f4f7ff"/>
+  <path d="M305 330c42-50 100-31 119 12 12 30-4 68-32 92-26 23-58 34-92 24-30-8-50-42-33-81 8-19 19-34 38-47z" fill="#f09b74"/>
+  <path d="M327 354c35-18 64-12 83 9" fill="none" stroke="#d87048" stroke-width="8" stroke-linecap="round"/>
+  <rect x="535" y="300" width="164" height="102" rx="18" fill="#1d4ed8"/>
+  <text x="565" y="362" fill="#ffffff" font-size="34" font-weight="700" font-family="Noto Sans KR, sans-serif">토리몽</text>
+  <rect x="812" y="292" width="130" height="18" rx="9" fill="#7aa2ff"/>
+  <rect x="812" y="330" width="150" height="18" rx="9" fill="#9ab7ff"/>
+  <rect x="812" y="368" width="110" height="18" rx="9" fill="#c4d6ff"/>
+  <text x="80" y="120" fill="#1d4ed8" font-size="54" font-weight="700" font-family="Noto Sans KR, sans-serif">기념품 추천</text>
+  <text x="80" y="176" fill="#61708a" font-size="28" font-family="Noto Sans KR, sans-serif">멘타이코 과자 · 하카타 토리몽</text>
+</svg>
