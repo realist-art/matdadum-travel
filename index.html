@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>맞닿음 모임</title>
   <meta name="theme-color" content="#1d4ed8">
-  <meta name="description" content="니시진역 근처 숙소를 기준으로 정리한 후쿠오카 맞닿음 여행 가이드">
+  <meta name="description" content="후쿠오카 남자 4인 여행을 위한 모바일 중심 가이드">
+  <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="맞닿음 모임">
@@ -14,135 +15,281 @@
   <link rel="apple-touch-icon" href="./icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div class="app-shell">
-    <header class="hero" id="top">
-      <div class="hero__grid">
-        <div>
-          <p class="eyebrow">FUKUOKA CONTENT GUIDE</p>
-          <h1>맞닿음 모임</h1>
-          <p class="hero__desc">
-            우리 찐득한 맞닿음을 위한 후쿠오카 일일 가이드.
-            니시진역 근처에서 시작해서, 같이 걷고 먹고 들를 만한 곳들만 보기 좋게 모아뒀습니다.
-          </p>
-          <div class="hero__actions">
-            <a class="hero-button hero-button--primary" href="#stay-spots">여행 보기</a>
-            <button class="hero-button hero-button--ghost" type="button" id="share-button">공유하기</button>
-          </div>
-        </div>
-        <aside class="hero__card">
-          <p class="panel__label">숙소 베이스</p>
-          <h2>最大10名｜広々96㎡一軒家</h2>
-          <ul class="plain-list">
-            <li>기준 위치: 니시진역 근처</li>
-            <li>강점: 모모치, 니시진, 오호리권 접근 좋음</li>
-            <li>추천 무드: 로컬 + 해변 + 시내 밸런스형</li>
-          </ul>
-          <div class="install-note" id="install-note">
-            홈 화면에 추가하면 휴대폰 앱처럼 열 수 있게 PWA로 구성했습니다.
-          </div>
-        </aside>
+    <header class="hero">
+      <div class="hero__copy">
+        <p class="eyebrow">MATDADUM FUKUOKA GUIDE</p>
+        <h1>맞닿음 모임</h1>
+        <p class="hero__desc">우리 찐득한 맞닿음을 위한 후쿠오카 일일 가이드. 지금 바로 써먹을 일정, 지도, 숙소, 환율, 날씨만 휴대폰 기준으로 정리해뒀습니다.</p>
       </div>
+
+      <div class="hero__meta">
+        <article class="hero-chip">
+          <span>여행 기간</span>
+          <strong>2026.06.18 - 06.21</strong>
+        </article>
+        <article class="hero-chip">
+          <span>확정 일정</span>
+          <strong>6/20 유후인 &amp; 사파리</strong>
+        </article>
+        <article class="hero-chip">
+          <span>숙소 기준</span>
+          <strong>이코이노이에 쇼다이</strong>
+        </article>
+      </div>
+
+      <div class="hero__actions">
+        <button class="hero-button hero-button--primary" type="button" data-tab-target="schedule">오늘 일정 보기</button>
+        <button class="hero-button hero-button--ghost" type="button" id="share-button">공유하기</button>
+      </div>
+
+      <div class="hero__notice" id="install-note">홈 화면에 추가하면 앱처럼 열 수 있습니다.</div>
     </header>
 
-    <section class="category-bar" aria-label="카테고리 바로가기">
-      <a href="#stay-spots">숙소 주변 명소</a>
-      <a href="#day-tours">버스 일일투어</a>
-      <a href="#city-content">시내 콘텐츠</a>
-      <a href="#food-gifts">맛집 & 기념품</a>
-    </section>
+    <nav class="tab-nav" id="tab-nav" aria-label="하단 탭 메뉴">
+      <button class="tab-nav__item is-active" type="button" data-tab-target="home">홈</button>
+      <button class="tab-nav__item" type="button" data-tab-target="schedule">날짜별 일정</button>
+      <button class="tab-nav__item" type="button" data-tab-target="maps">지도·교통</button>
+      <button class="tab-nav__item" type="button" data-tab-target="nearby">숙소 주변</button>
+      <button class="tab-nav__item" type="button" data-tab-target="city">시내 콘텐츠</button>
+      <button class="tab-nav__item" type="button" data-tab-target="food">쇼핑·기념품</button>
+      <button class="tab-nav__item" type="button" data-tab-target="exchange">엔화 계산기</button>
+      <button class="tab-nav__item" type="button" data-tab-target="weather">날씨</button>
+      <button class="tab-nav__item" type="button" data-tab-target="stay">숙소</button>
+      <button class="tab-nav__item" type="button" data-tab-target="run">러닝·온천</button>
+      <button class="tab-nav__item" type="button" data-tab-target="guide">여행 준비</button>
+    </nav>
 
-    <main>
-      <section class="section" id="stay-spots">
+    <main class="tab-panels">
+      <section class="tab-panel is-active" id="tab-home" data-tab-panel="home">
         <div class="section-heading">
-          <p class="eyebrow">CATEGORY 01</p>
+          <p class="eyebrow">HOME</p>
+          <h2>이번 여행 핵심만 먼저</h2>
+        </div>
+        <div class="cards-grid cards-grid--two" id="home-summary"></div>
+        <div class="cards-grid cards-grid--two" id="home-quick-links"></div>
+      </section>
+
+      <section class="tab-panel" id="tab-schedule" data-tab-panel="schedule">
+        <div class="section-heading">
+          <p class="eyebrow">SCHEDULE</p>
+          <h2>날짜별 일정</h2>
+          <p class="section-lead">6월 20일 토요일은 유후인 &amp; 아프리칸 사파리 일일투어로 확정했습니다.</p>
+        </div>
+        <div class="date-tabs" id="date-tabs"></div>
+        <div class="cards-grid" id="schedule-panel"></div>
+      </section>
+
+      <section class="tab-panel" id="tab-maps" data-tab-panel="maps">
+        <div class="section-heading">
+          <p class="eyebrow">MAPS</p>
+          <h2>지도·교통</h2>
+          <p class="section-lead">숙소, 니시진역, 하카타역 집결지, 공항, 러닝 도착지까지 바로 열 수 있게 묶었습니다.</p>
+        </div>
+        <div class="cards-grid cards-grid--two" id="transport-grid"></div>
+      </section>
+
+      <section class="tab-panel" id="tab-nearby" data-tab-panel="nearby">
+        <div class="section-heading">
+          <p class="eyebrow">NEARBY</p>
           <h2>숙소 주변 명소</h2>
-          <p class="section-lead">
-            숙소 정확 주소 대신 `니시진역`을 출발 기준으로 잡았습니다.
-            휴대폰에서 `Google 지도` 버튼을 누르면 바로 길찾기로 연결되고, 카드에는 체감 거리와 어떤 식으로 묶으면 좋은지까지 같이 적어뒀습니다.
-          </p>
         </div>
-        <div class="cards-grid cards-grid--primary" id="stay-grid"></div>
+        <div class="cards-grid cards-grid--two" id="nearby-grid"></div>
       </section>
 
-      <section class="section" id="day-tours">
+      <section class="tab-panel" id="tab-city" data-tab-panel="city">
         <div class="section-heading">
-          <p class="eyebrow">CATEGORY 02</p>
-          <h2>버스 일일투어</h2>
-        </div>
-        <div class="tour-compare" id="tour-compare"></div>
-      </section>
-
-      <section class="section" id="city-content">
-        <div class="section-heading">
-          <p class="eyebrow">CATEGORY 03</p>
+          <p class="eyebrow">CITY</p>
           <h2>시내에서 좋은 콘텐츠</h2>
-          <p class="section-lead">
-            유후인을 포기해도 아쉽지 않게 채울 수 있는 카드들입니다.
-            실내, 야경, 쇼핑, 산책이 섞여 있어서 날씨나 팀 체력에 따라 바꾸기 쉽습니다.
-          </p>
         </div>
-        <div class="cards-grid" id="city-grid"></div>
+        <div class="cards-grid cards-grid--two" id="city-grid"></div>
       </section>
 
-      <section class="section" id="food-gifts">
+      <section class="tab-panel" id="tab-food" data-tab-panel="food">
         <div class="section-heading">
-          <p class="eyebrow">CATEGORY 04</p>
-          <h2>맛집 & 기념품</h2>
-          <p class="section-lead">
-            첫 방문 기준으로 실패 확률 낮은 먹거리와 선물용 기념품만 추렸습니다.
-            `왜 추천하는지`, `언제 넣으면 좋은지`, `대략 가격대`까지 같이 정리했습니다.
-          </p>
+          <p class="eyebrow">FOOD &amp; SHOPPING</p>
+          <h2>쇼핑·기념품, 맛집</h2>
         </div>
-        <div class="cards-grid" id="food-grid"></div>
+        <div class="cards-grid cards-grid--two" id="food-grid"></div>
+        <div class="cards-grid cards-grid--two" id="review-grid"></div>
       </section>
 
-      <section class="section" id="practical-tips">
+      <section class="tab-panel" id="tab-exchange" data-tab-panel="exchange">
         <div class="section-heading">
-          <p class="eyebrow">BONUS INFO</p>
-          <h2>들어가면 좋은 실전 정보</h2>
-          <p class="section-lead">
-            실제 여행 중 자주 찾게 되는 내용만 모았습니다.
-            교통, 결제, 예약, 쇼핑 타이밍처럼 바로 써먹는 정보 위주입니다.
-          </p>
+          <p class="eyebrow">EXCHANGE</p>
+          <h2>엔화 계산기</h2>
+          <p class="section-lead">실시간 환율이 실패하면 직접 환율을 넣어 계산할 수 있습니다.</p>
         </div>
-        <div class="cards-grid" id="tips-grid"></div>
+        <article class="card calculator-card">
+          <div class="calculator-meta">
+            <div>
+              <span class="panel__label">현재 적용 환율</span>
+              <strong id="rate-display">불러오는 중</strong>
+            </div>
+            <div>
+              <span class="panel__label">마지막 업데이트</span>
+              <strong id="rate-updated-at">-</strong>
+            </div>
+          </div>
+          <div class="field-grid">
+            <label class="field">
+              <span>엔화 (JPY)</span>
+              <input id="jpy-input" type="text" inputmode="numeric" placeholder="예: 10,000">
+            </label>
+            <label class="field">
+              <span>원화 (KRW)</span>
+              <input id="krw-input" type="text" inputmode="numeric" placeholder="예: 95,000">
+            </label>
+          </div>
+          <div class="field-grid field-grid--single">
+            <label class="field">
+              <span>직접 입력 환율 (1엔당 원화)</span>
+              <input id="manual-rate-input" type="text" inputmode="decimal" placeholder="예: 9.54">
+            </label>
+          </div>
+          <div class="button-row">
+            <button class="action-button" type="button" id="rate-refresh-button">환율 새로고침</button>
+            <button class="action-button action-button--soft" type="button" id="manual-rate-button">직접 입력 환율 적용</button>
+          </div>
+          <div class="quick-amounts" id="quick-amounts"></div>
+          <p class="inline-message" id="rate-message"></p>
+        </article>
       </section>
 
-      <section class="section" id="naver-reviews">
+      <section class="tab-panel" id="tab-weather" data-tab-panel="weather">
         <div class="section-heading">
-          <p class="eyebrow">NAVER REVIEW</p>
-          <h2>니시진역 후기 더보기</h2>
-          <p class="section-lead">
-            여행 전에 분위기 더 보고 싶을 때 바로 눌러볼 수 있게 네이버 블로그 검색 링크도 묶어뒀습니다.
-          </p>
+          <p class="eyebrow">WEATHER</p>
+          <h2>후쿠오카 날씨</h2>
         </div>
-        <div class="cards-grid" id="review-grid"></div>
+        <article class="card weather-card">
+          <div class="weather-top">
+            <div>
+              <span class="panel__label">현재 날씨</span>
+              <strong id="weather-current-temp">-</strong>
+            </div>
+            <div>
+              <span class="panel__label">마지막 업데이트</span>
+              <strong id="weather-updated-at">-</strong>
+            </div>
+          </div>
+          <div class="weather-stats" id="weather-stats"></div>
+          <div class="button-row">
+            <button class="action-button" type="button" id="weather-refresh-button">날씨 새로고침</button>
+          </div>
+          <p class="inline-message" id="weather-message"></p>
+        </article>
+        <div class="cards-grid cards-grid--two" id="weather-daily-grid"></div>
+        <div class="cards-grid cards-grid--two" id="weather-hourly-grid"></div>
       </section>
 
-      <section class="section" id="sample-day">
+      <section class="tab-panel" id="tab-stay" data-tab-panel="stay">
         <div class="section-heading">
-          <p class="eyebrow">SAMPLE FLOW</p>
-          <h2>추천 하루 배치 예시</h2>
-          <p class="section-lead">
-            카테고리형으로 보되, 실제로는 이렇게 조합하면 동선이 편합니다.
-          </p>
+          <p class="eyebrow">STAY</p>
+          <h2>숙소</h2>
         </div>
-        <div class="sample-board" id="sample-board"></div>
+        <div class="cards-grid cards-grid--two">
+          <article class="card">
+            <span class="panel__label">숙소명</span>
+            <h3>이코이노이에 쇼다이</h3>
+            <p>〒814-0012 일본 후쿠오카현 후쿠오카시 사와라구 쇼다이 2-9-14</p>
+            <div class="button-row">
+              <a class="action-button" href="https://maps.app.goo.gl/i57qpsDuxfXsw5te6" target="_blank" rel="noreferrer">지도 열기</a>
+              <button class="action-button action-button--soft" type="button" data-copy="〒814-0012 일본 후쿠오카현 후쿠오카시 사와라구 쇼다이 2-9-14">주소 복사</button>
+            </div>
+          </article>
+          <article class="card">
+            <span class="panel__label">셀프 체크인</span>
+            <h3>현관 왼쪽 난간 열쇠 보관함</h3>
+            <ol class="ordered-list">
+              <li>숙소는 셀프 체크인입니다.</li>
+              <li>현관 왼쪽 난간의 열쇠 보관함을 찾습니다.</li>
+              <li>핀 코드를 입력해 객실 열쇠를 꺼냅니다.</li>
+              <li>입실 후 다시 보관함을 닫아둡니다.</li>
+            </ol>
+            <div class="secret-box">
+              <span class="panel__label">키 핀 코드</span>
+              <strong class="secret-value" id="pin-code-value">보기 전에는 숨김</strong>
+              <div class="button-row">
+                <button class="action-button" type="button" data-secret-target="pin-code-value" data-secret-value="0516">보기</button>
+                <button class="action-button action-button--soft" type="button" data-copy="0516">복사</button>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <span class="panel__label">Wi-Fi</span>
+            <h3>무선 인터넷 정보</h3>
+            <div class="secret-box">
+              <span class="panel__label">Wi-Fi ID</span>
+              <strong class="secret-value" id="wifi-id-value">보기 전에는 숨김</strong>
+              <div class="button-row">
+                <button class="action-button" type="button" data-secret-target="wifi-id-value" data-secret-value="Buffalo-5G(2G)-6350">보기</button>
+                <button class="action-button action-button--soft" type="button" data-copy="Buffalo-5G(2G)-6350">복사</button>
+              </div>
+            </div>
+            <div class="secret-box">
+              <span class="panel__label">비밀번호</span>
+              <strong class="secret-value" id="wifi-pass-value">보기 전에는 숨김</strong>
+              <div class="button-row">
+                <button class="action-button" type="button" data-secret-target="wifi-pass-value" data-secret-value="d8rggu5ar75f4">보기</button>
+                <button class="action-button action-button--soft" type="button" data-copy="d8rggu5ar75f4">복사</button>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <span class="panel__label">주의</span>
+            <h3>민감 정보 노출 주의</h3>
+            <p>지금처럼 공개 GitHub Pages에 올리면 핀 코드와 와이파이 비밀번호는 소스코드에서 노출될 수 있습니다. 가림 UI는 화면용 보호만 할 뿐 완전한 보안은 아닙니다.</p>
+            <details>
+              <summary>왜 주의가 필요한지</summary>
+              <div class="accordion-body">
+                <p>가장 안전한 방법은 비공개 저장소 또는 배포 전 비밀번호 값을 직접 바꾸는 것입니다. 공개 저장소는 검색엔진 인덱싱과 소스 보기로 유출될 수 있습니다.</p>
+              </div>
+            </details>
+          </article>
+        </div>
       </section>
 
-      <section class="section source-section" id="sources">
+      <section class="tab-panel" id="tab-run" data-tab-panel="run">
         <div class="section-heading">
-          <p class="eyebrow">SOURCES</p>
-          <h2>참고 링크</h2>
+          <p class="eyebrow">RUN &amp; ONSEN</p>
+          <h2>러닝·온천</h2>
+          <p class="section-lead">니시진역 또는 숙소 인근에서 출발해 나미하노유 온천으로 가는 코스입니다. 실제 거리는 페이지 접속 시 경로 API 기준으로 계산합니다.</p>
         </div>
+        <article class="card">
+          <div class="field-grid">
+            <label class="field">
+              <span>출발지 선택</span>
+              <select id="run-origin-select">
+                <option value="station">니시진역 출발</option>
+                <option value="lodging">숙소 인근 출발</option>
+              </select>
+            </label>
+          </div>
+          <div class="button-row">
+            <button class="action-button" type="button" id="run-route-refresh">러닝 경로 계산</button>
+            <a class="action-button action-button--soft" id="run-route-map-link" href="#" target="_blank" rel="noreferrer">Google 지도 경로</a>
+          </div>
+          <p class="inline-message" id="run-route-message"></p>
+          <div class="cards-grid cards-grid--two" id="run-route-grid"></div>
+        </article>
+        <div class="cards-grid cards-grid--two" id="run-tips-grid"></div>
+      </section>
+
+      <section class="tab-panel" id="tab-guide" data-tab-panel="guide">
+        <div class="section-heading">
+          <p class="eyebrow">GUIDE</p>
+          <h2>여행 준비·사용법</h2>
+        </div>
+        <div class="cards-grid cards-grid--two" id="guide-grid"></div>
         <div class="source-list" id="source-links"></div>
       </section>
     </main>
   </div>
+
   <script src="./app.js"></script>
 </body>
 </html>

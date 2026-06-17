@@ -1,7 +1,7 @@
 {
   "name": "맞닿음 모임",
   "short_name": "맞닿음 모임",
-  "description": "니시진역 근처 숙소를 기준으로 정리한 후쿠오카 여행 가이드",
+  "description": "후쿠오카 남자 4인 여행을 위한 모바일 중심 가이드",
   "lang": "ko",
   "start_url": "./index.html",
   "scope": "./",
