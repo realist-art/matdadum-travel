@@ -150,6 +150,10 @@ img {
   align-content: start;
 }
 
+#home-summary .card--tap .card__footer {
+  margin-top: auto;
+}
+
 #home-summary .panel__label,
 #home-quick-links .panel__label {
   display: none;

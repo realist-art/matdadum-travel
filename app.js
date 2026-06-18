@@ -15,18 +15,22 @@ const HOME_SUMMARY = [
   {
     title: "확정 메인 이벤트",
     text: "6월 20일 유후인 & 아프리칸 사파리",
+    tab: "schedule",
   },
   {
     title: "숙소 체크인 핵심",
     text: "주소 · 지도 · 핀 코드 · 와이파이",
+    tab: "stay",
   },
   {
     title: "지금 자주 쓸 기능",
     text: "환율 · 날씨 · 집결지 · 러닝",
+    tab: "exchange",
   },
   {
     title: "여행 중 바로 쓰는 기능",
     text: "지도 · 복사 · 탭 이동",
+    tab: "maps",
   },
 ];
 
@@ -611,11 +615,15 @@ function renderActionButton(action) {
 }
 
 function renderHome() {
-  ELEMENTS.homeSummary.innerHTML = HOME_SUMMARY.map((item) => createInfoCard({
-    title: item.title,
-    badge: "",
-    summary: item.text,
-  })).join("");
+  ELEMENTS.homeSummary.innerHTML = HOME_SUMMARY.map((item) => `
+    <article class="card card--tap">
+      <h3>${item.title}</h3>
+      <p>${item.text}</p>
+      <div class="card__footer">
+        <button class="action-button action-button--soft" type="button" data-tab-target="${item.tab}">이동</button>
+      </div>
+    </article>
+  `).join("");
 
   ELEMENTS.homeQuickLinks.innerHTML = HOME_QUICK_LINKS.map((item) => `
     <article class="card">
